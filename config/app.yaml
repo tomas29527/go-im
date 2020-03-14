@@ -1,0 +1,15 @@
+app:
+  logFile: log/im.log
+  httpPort: 8080
+  webSocketPort: 8089
+  rpcPort: 9001
+  httpUrl: 192.168.25.220:8080
+  webSocketUrl:  192.168.25.220:8089
+
+
+redis:
+  addr: "localhost:6379"
+  password: ""
+  DB: 2
+  poolSize: 30
+  minIdleConns: 30
