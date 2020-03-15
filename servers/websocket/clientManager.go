@@ -287,10 +287,8 @@ func (manager *ClientManager) EventUnregister(client *Client) {
 		userOnline.LogOut()
 		cache.SetUserOnlineInfo(client.GetKey(), userOnline)
 	}
-
 	// 关闭 chan
 	// close(client.Send)
-
 	logger.Logger.Info("EventUnregister 用户断开连接",
 		zap.String("Addr", client.Addr),
 		zap.Uint32("AppId", client.AppId),

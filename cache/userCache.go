@@ -75,6 +75,5 @@ func SetUserOnlineInfo(userKey string, userOnline *model.UserOnline) (err error)
 		logger.Logger.Error("设置用户在线数据", zap.String("key", key), zap.Error(err))
 		return
 	}
-
 	return
 }

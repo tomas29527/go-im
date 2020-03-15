@@ -1,7 +1,6 @@
 package cache
 
 import (
-	"encoding/json"
 	"fmt"
 	"go-im/logger"
 	"go-im/model"
@@ -74,10 +73,6 @@ func GetServerAll(currentTime uint64) (servers []*model.Server, err error) {
 
 	redisClient := redislib.GetClient()
 
-	val, err := redisClient.Do("hGetAll", key).Result()
-
-	valByte, _ := json.Marshal(val)
-	logger.Logger.Info("GetServerAll", zap.String("key", key), zap.String("valByte", string(valByte)))
 	serverMap, err := redisClient.HGetAll(key).Result()
 	if err != nil {
 		fmt.Println("SetServerInfo", key, err)
