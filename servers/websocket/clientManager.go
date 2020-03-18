@@ -246,14 +246,11 @@ func (manager *ClientManager) sendRoomAll(message []byte, appId uint32, ignore *
 // 用户建立连接事件
 func (manager *ClientManager) EventRegister(client *Client) {
 	manager.AddClients(client)
-
 	logger.Logger.Info("EventRegister 用户建立连接", zap.String("Addr", client.Addr))
-	// client.Send <- []byte("连接成功")
 }
 
 // 用户登录
 func (manager *ClientManager) EventLogin(login *login) {
-
 	client := login.Client
 	// 连接存在，在添加
 	if manager.InClient(client) {
